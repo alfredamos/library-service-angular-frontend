@@ -1,0 +1,26 @@
+<div class="border pado">
+  <form [formGroup]="departmentForm" (ngSubmit)="departmentSubmit()">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="text-center">Department {{formName}} form </h4>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input id="name" type="text" formControlName="name" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="faculty" class="form-label">Faculty</label>
+          <input id="faculty" type="text" formControlName="faculty" class="form-control" />
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary form-control m-1">Submit</button>
+        <button type="button" class="btn btn-secondary form-control m-1" (click)="backToList()">Back</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+

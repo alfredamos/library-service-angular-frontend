@@ -1,0 +1,8 @@
+<app-edit-profile-form
+  [departments]="departments$ | async"
+  [editProfileForm]="editProfileForm"
+  (onBackToList)="backToList()"
+  (onEditProfileSubmit)="editProfileSubmit($event)"
+>
+</app-edit-profile-form>
+

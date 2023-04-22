@@ -1,0 +1,116 @@
+<div class="border pado">
+  <form [formGroup]="bookForm" (ngSubmit)="bookSubmit()">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="text-center">Book {{ formName }} form</h4>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="isbn" class="form-label">ISBN</label>
+          <input
+            id="isbn"
+            formControlName="isbn"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            id="title"
+            formControlName="title"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="publisher" class="form-label">Publisher</label>
+          <input
+            id="publisher"
+            formControlName="publisher"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="edition" class="form-label">Edition</label>
+          <input
+            id="edition"
+            formControlName="edition"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="volume" class="form-label">Volume</label>
+          <input
+            id="volume"
+            formControlName="volume"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input
+            id="quantity"
+            formControlName="quantity"
+            type="number"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="dateOfPublication" class="form-label">Publication Date</label>
+          <input
+            id="dateOfPublication"
+            formControlName="dateOfPublication"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="authorId" class="form-label">Author</label>
+          <select id="authorId" formControlName="authorId" class="form-select">
+            <option value="">Please Select an author!</option>
+            <option
+              *ngFor="let author of authors"
+              [id]="author.id"
+              [value]="author.id"
+            >
+              {{ author.name }}
+            </option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="bookCatId" class="form-label">Book Category</label>
+          <select
+            id="bookCatId"
+            formControlName="bookCatId"
+            class="form-select"
+          >
+            <option value="">Please Select a category</option>
+            <option
+              *ngFor="let category of categories"
+              [id]="category.id"
+              [value]="category.id"
+            >
+              {{ category.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary form-control m-1">
+          Submit
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary form-control m-1"
+          (click)="backToList()"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

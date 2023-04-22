@@ -1,0 +1,10 @@
+<app-library-form
+[books]="books$ | async"
+[formName]="formName"
+[libraryForm]="libraryForm"
+[users]="users$ | async"
+(onBackToList)="backToList()"
+(onLibrarySubmit)="librarySubmit($event)"
+>
+
+</app-library-form>

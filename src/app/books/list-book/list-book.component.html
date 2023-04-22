@@ -1,0 +1,45 @@
+<div class="border pado" style="padding: 10px" *ngIf="books$ | async as books">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="text-center">Book List</h4>
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Volume</th>
+            <th>Edition</th>
+            <th>Publication</th>
+            <th>Quantity</th>
+            <th>Publisher</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books">
+            <td><a class="rem-text-deco" routerLink="/detail-book/{{book.id}}">{{ book.title }}</a></td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.author?.name }}</td>
+            <td>{{ book.category?.name }}</td>
+            <td>{{ book.volume }}</td>
+            <td>{{ book.edition }}</td>
+            <td>{{ book.dateOfPublication | date }}</td>
+            <td>{{ book.quantity }}</td>
+            <td>{{ book.publisher }}</td>
+            <td>
+              <a routerLink="/edit-book/{{book.id}}" class="btn btn-warning m-1 fw-bold">Edit</a>
+              <a routerLink="/delete-book/{{book.id}}" class="btn btn-danger m-1 fw-bold">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer">
+      <a routerLink="/add-book" class="btn btn-secondary form-control m-1 fw-bold">Add Book</a>
+    </div>
+  </div>
+</div>

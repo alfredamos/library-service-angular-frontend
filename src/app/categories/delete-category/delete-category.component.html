@@ -1,0 +1,20 @@
+<ng-container *ngIf="bookCat$ | async as bookCat">
+<app-single-category *ngIf="!showDeleteItem"
+[category]="bookCat"
+[isDelete]="true"
+(onEditClick)="editClick($event)"
+(onBackToList)="backToList()"
+(onDeleteClick)="deleteClick()"
+>
+</app-single-category>
+<app-delete-item *ngIf="showDeleteItem"
+cancelButton="Cancel"
+[deleteMessage]="deleteMessage"
+[deleteTitle]="deleteTitle"
+submitButton="Delete"
+(onDeleteSubmit)="deleteBookCat($event)"
+>
+</app-delete-item>
+</ng-container>
+
+

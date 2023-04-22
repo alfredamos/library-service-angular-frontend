@@ -1,0 +1,7 @@
+<ng-container *ngIf="user$ | async as user">
+<app-single-user
+[user]="user"
+(onBackToList)="backToList()"
+>
+</app-single-user>
+</ng-container>

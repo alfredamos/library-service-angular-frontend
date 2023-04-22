@@ -1,0 +1,9 @@
+<ng-container *ngIf="book$ | async as book">
+<app-single-book
+[book]="book"
+(onEditClick)="editClick($event)"
+(onBackToList)="backToList()"
+>
+</app-single-book>
+</ng-container>
+

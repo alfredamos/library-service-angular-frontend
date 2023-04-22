@@ -1,0 +1,11 @@
+<app-delete-item
+  *ngIf="showDeleteItem && isLoggedIn"
+  [deleteMessage]="deleteMessage"
+  [deleteTitle]="deleteTitle"
+  submitButton="Logout"
+  cancelButton="Cancel"
+  (onDeleteSubmit)="logout($event)"
+>
+
+
+

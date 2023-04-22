@@ -1,0 +1,19 @@
+<ng-container *ngIf="user$ | async as user">
+<app-single-user *ngIf="!showDeleteItem"
+[user]="user"
+[isDelete]="true"
+(onBackToList)="backToList()"
+(onDeleteClick)="deleteClick()"
+>
+</app-single-user>
+<app-delete-item *ngIf="showDeleteItem"
+cancelButton="Cancel"
+[deleteMessage]="deleteMessage"
+[deleteTitle]="deleteTitle"
+submitButton="Delete"
+(onDeleteSubmit)="deleteUser($event)"
+>
+</app-delete-item>
+</ng-container>
+
+

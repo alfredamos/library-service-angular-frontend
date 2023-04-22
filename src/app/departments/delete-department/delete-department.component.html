@@ -1,0 +1,20 @@
+<ng-container *ngIf="department$ | async as department">
+<app-single-department *ngIf="!showDeleteItem"
+[department]="department"
+[isDelete]="true"
+(onEditClick)="editClick($event)"
+(onBackToList)="backToList()"
+(onDeleteClick)="deleteClick()"
+>
+</app-single-department>
+<app-delete-item *ngIf="showDeleteItem"
+cancelButton="Cancel"
+[deleteMessage]="deleteMessage"
+[deleteTitle]="deleteTitle"
+submitButton="Delete"
+(onDeleteSubmit)="deleteDepartment($event)"
+>
+</app-delete-item>
+</ng-container>
+
+

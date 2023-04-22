@@ -1,0 +1,8 @@
+<app-signup-form
+[departments]="departments$ | async"
+[signupForm]="signupForm"
+(onBackToList)="backToList()"
+(onSignupSubmit)="signupSubmit($event)"
+>
+
+</app-signup-form>

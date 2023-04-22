@@ -1,0 +1,9 @@
+<ng-container *ngIf="bookCat$ | async as bookCat">
+<app-single-category
+[category]="bookCat"
+(onEditClick)="editClick($event)"
+(onBackToList)="backToList()"
+>
+</app-single-category>
+</ng-container>
+

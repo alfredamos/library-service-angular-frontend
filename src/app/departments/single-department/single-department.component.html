@@ -1,0 +1,19 @@
+<div class="border pado">
+  <div class="card">
+    <div class="card-header">      
+      <h4 class="text-center">Department Detail</h4>
+    </div>
+    <div class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item">Name: <strong>{{department.name}}</strong></li>
+        <li class="list-group-item">Faculty: <strong>{{department.faculty}}</strong></li>
+      </ul>
+    </div>
+    <div class="card-footer">
+       <button class="btn btn-warning form-control m-1 fw-bold" (click)="editClick(department.id)">Edit</button>
+      <button class="btn btn-secondary form-control m-1 fw-bold" (click)="backToList()">Back</button>
+      <button class="btn btn-danger form-control m-1 fw-bold" (click)="deleteClick()" *ngIf="isDelete">Delete</button>
+    </div>
+  </div>
+</div>
+

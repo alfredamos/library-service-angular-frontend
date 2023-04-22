@@ -1,0 +1,19 @@
+<ng-container *ngIf="author$ | async as author">
+<app-single-author *ngIf="!showDeleteItem"
+[author]="author"
+[isDelete]="true"
+(onEditClick)="editClick($event)"
+(onBackToList)="backToList()"
+(onDeleteClick)="deleteClick()"
+>
+</app-single-author>
+<app-delete-item *ngIf="showDeleteItem"
+cancelButton="Cancel"
+[deleteMessage]="deleteMessage"
+[deleteTitle]="deleteTitle"
+submitButton="Delete"
+(onDeleteSubmit)="deleteAuthor($event)"
+>
+</app-delete-item>
+</ng-container>
+

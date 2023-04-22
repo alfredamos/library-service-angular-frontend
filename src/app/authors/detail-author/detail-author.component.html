@@ -1,0 +1,8 @@
+<ng-container *ngIf="author$ | async as author">
+<app-single-author
+[author]="author"
+(onEditClick)="editClick($event)"
+(onBackToList)="backToList()"
+>
+</app-single-author>
+</ng-container>

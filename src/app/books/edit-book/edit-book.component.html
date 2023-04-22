@@ -1,0 +1,10 @@
+<app-book-form
+[bookForm]="bookForm"
+[authors]="authors$ | async"
+[categories]="categories$ | async"
+[formName]="formName"
+(onBackToList)="backToList()"
+(onBookSubmit)="bookSubmit($event)"
+>
+</app-book-form>
+

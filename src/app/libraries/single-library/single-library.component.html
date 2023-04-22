@@ -1,0 +1,24 @@
+<div class="border pado">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="text-center">Library Detail</h4>
+    </div>
+    <div class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item">User: <strong>{{library.user?.name}}</strong></li>
+        <li class="list-group-item">Book: <strong>{{library.book?.title}}</strong></li>
+        <li class="list-group-item">Req. Category: <strong>{{library.requesterCategory}}</strong></li>
+        <li class="list-group-item">Date Out: <strong>{{library.dateBookOut | date}}</strong></li>
+        <li class="list-group-item">Date Due: <strong>{{library.dateBookDue | date}}</strong></li>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <div class="card-footer">      
+      <button class="btn btn-warning form-control m-1 fw-bold" (click)="editClick(library.id)">Edit</button>
+      <button class="btn btn-secondary form-control m-1 fw-bold" (click)="backToList()">Back</button>
+      <button class="btn btn-danger form-control m-1 fw-bold" (click)="deleteClick()" *ngIf="isDelete">Delete</button>
+    </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,94 @@
+<ul
+  class="nav nav-pills mb-3 mt-3 d-flex justify-content-center"
+  *ngIf="authUser$ | async as authUser"
+>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/authors" routerLinkActive="active"
+      >Authors</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLinkActive="active"
+      routerLink="/books"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Books</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="/categories"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Categories</a
+    >
+  </li>
+<li class="nav-item">
+    <a
+      class="nav-link"
+      routerLinkActive="active"
+      routerLink="/departments"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Departments</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLinkActive="active"
+      routerLink="/users"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Users</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/login" *ngIf="!authUser.isLoggedIn"
+      >Login</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/logout" *ngIf="authUser.isLoggedIn"
+      >Logout</a
+    >
+  </li>
+  <li class="dropdown" *ngIf="authUser.isLoggedIn">
+    <a
+      class="btn btn-link dropdown-toggle"
+      href="#"
+      role="button"
+      id="dropdownMenuLink"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Settings
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <li>
+        <a class="dropdown-item" routerLink="/change-password"
+          >Change Password</a
+        >
+      </li>
+      <li>
+        <a
+          class="dropdown-item"
+          routerLink="/edit-profile"
+          routerLinkActive="active"
+          >Edit Profile</a
+        >
+      </li>
+    </ul>
+  </li>
+</ul>

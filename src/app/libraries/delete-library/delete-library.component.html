@@ -1,0 +1,20 @@
+<ng-container *ngIf="library$ | async as library">
+<app-single-library *ngIf="!showDeleteItem"
+[library]="library"
+[isDelete]="true"
+(onEditClick)="editClick($event)"
+(onBackToList)="backToList()"
+(onDeleteClick)="deleteClick()"
+>
+</app-single-library>
+<app-delete-item *ngIf="showDeleteItem"
+cancelButton="Cancel"
+[deleteMessage]="deleteMessage"
+[deleteTitle]="deleteTitle"
+submitButton="Delete"
+(onDeleteSubmit)="deleteLibrary($event)"
+>
+</app-delete-item>
+</ng-container>
+
+

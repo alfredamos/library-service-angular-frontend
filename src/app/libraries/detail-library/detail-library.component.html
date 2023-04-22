@@ -1,0 +1,8 @@
+<ng-container *ngIf="library$ | async as library">
+<app-single-library
+[library]="library"
+(onEditClick)="editClick($event)"
+(onBackToList)="backToList()"
+>
+</app-single-library>
+</ng-container>

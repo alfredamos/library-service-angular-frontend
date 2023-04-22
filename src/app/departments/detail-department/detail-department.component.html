@@ -1,0 +1,8 @@
+<ng-container *ngIf="department$ | async as department">
+<app-single-department
+[department]="department"
+(onEditClick)="editClick($event)"
+(onBackToList)="backToList()"
+>
+</app-single-department>
+</ng-container>

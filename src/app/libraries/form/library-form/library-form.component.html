@@ -1,0 +1,54 @@
+<div class="border pado">
+  <form [formGroup]="libraryForm" (ngSubmit)="librarySubmit()">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="text-center">Library {{ formName }} form</h4>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="bookId" class="form-label">Book</label>
+          <select id="bookId" formControlName="bookId" class="form-select">
+            <option value="">Please Select a book!</option>
+            <option *ngFor="let book of books" [id]="book.id" [value]="book.id">
+              {{ book.title }}
+            </option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="userId" class="form-label">User</label>
+          <select id="userId" formControlName="userId" class="form-select">
+            <option value="">Please Select a User</option>
+            <option *ngFor="let user of users" [id]="user.id" [value]="user.id">
+              {{ user.name }}
+            </option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="requesterCategory" class="form-label"></label>
+          <select
+            id="requesterCategory"
+            formControlName="requesterCategory"
+            class="form-select"
+          >
+            <option value="Faculty">Faculty</option>
+            <option value="Others">Others</option>
+            <option value="Staff">Staff</option>
+            <option value="Student">Student</option>
+          </select>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary form-control m-1">
+          Submit
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary form-control m-1"
+          (click)="backToList()"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

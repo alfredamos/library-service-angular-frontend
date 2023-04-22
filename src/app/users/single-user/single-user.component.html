@@ -1,0 +1,21 @@
+<div class="border pado">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="text-center">User Detail</h4>
+    </div>
+    <div class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item">Name: <strong>{{user.name}}</strong></li>
+        <li class="list-group-item">Email: <strong>{{user.email}}</strong></li>
+        <li class="list-group-item">Phone: <strong>{{user.phone}}</strong></li>
+        <li class="list-group-item">Department: <strong>{{user.department?.name}}</strong></li>
+        <li class="list-group-item">Gender: <strong>{{user.name}}</strong></li>
+      </ul>
+    </div>
+    <div class="card-footer">      
+      <button class="btn btn-secondary form-control m-1 fw-bold" (click)="backToList()">Back</button>
+      <button (click)="deleteClick()" class="btn btn-danger form-control m-1 fw-bold" *ngIf="isDelete">Delete</button>
+    </div>
+  </div>
+</div>
+

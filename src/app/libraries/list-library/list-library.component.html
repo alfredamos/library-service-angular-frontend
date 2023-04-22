@@ -1,0 +1,38 @@
+<div class="border pado" style="padding: 10px">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="text-center">Library List</h4>
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Book</th>
+            <th>User</th>
+            <th>Requester Category</th>
+            <th>Date Book Out</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let library of libraries$ | async">
+            <td><a class="rem-text-deco" routerLink="/detail-library/{{library.id}}">{{ library.book?.title }}</a></td>
+            <td>{{ library.user?.name }}</td>
+            <td>{{ library.requesterCategory }}</td>
+            <td>{{ library.dateBookOut | date }}</td>
+            <td>{{ library.dateBookDue | date }}</td>
+            <td>
+              <a routerLink="/edit-library/{{library.id}}" class="btn btn-warning m-1 fw-bold">Edit</a>
+              <a routerLink="/delete-library/{{library.id}}" class="btn btn-danger m-1 fw-bold">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer">
+      <a routerLink="/add-library" class="btn btn-secondary form-control m-1 fw-bold">Add Library</a>
+    </div>
+  </div>
+</div>
+
